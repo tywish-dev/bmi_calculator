@@ -11,9 +11,6 @@ class GenderCard extends StatefulWidget {
 }
 
 class _GenderCardState extends State<GenderCard> {
-  bool _isFemaleSelected = false;
-  bool _isMaleSelected = false;
-
   @override
   Widget build(BuildContext context) {
     var bmiProvider = Provider.of<BmiProvider>(context);
