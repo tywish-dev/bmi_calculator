@@ -26,22 +26,16 @@ class _GenderCardState extends State<GenderCard> {
           onTap: () {
             if (widget.gender == 0) {
               bmiProvider.femaleGender();
-              setState(() {
-                _isFemaleSelected = !_isFemaleSelected;
-                _isMaleSelected = false;
-              });
+              bmiProvider.genderSelected();
             } else {
               bmiProvider.maleGender();
-              setState(() {
-                _isMaleSelected = !_isMaleSelected;
-                _isFemaleSelected = false;
-              });
+              bmiProvider.genderSelected();
             }
           },
           child: Column(
             children: [
               widget.gender == 0
-                  ? _isFemaleSelected == true
+                  ? bmiProvider.getGenderSelected == 0
                       ? const Opacity(
                           opacity: 1,
                           child: Icon(
@@ -56,7 +50,7 @@ class _GenderCardState extends State<GenderCard> {
                             size: 144,
                           ),
                         )
-                  : _isMaleSelected == true
+                  : bmiProvider.getGenderSelected == 1
                       ? const Opacity(
                           opacity: 1,
                           child: Icon(

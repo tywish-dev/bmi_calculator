@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class BmiProvider with ChangeNotifier {
   int _gender = 1;
+  int _genderSelected = 0;
   double _height = 180;
   int _weight = 70;
   int _age = 20;
@@ -12,6 +13,7 @@ class BmiProvider with ChangeNotifier {
   Color _color = Colors.green;
 
   int get getGender => _gender;
+  int get getGenderSelected => _genderSelected;
   double get getHeight => _height;
   int get getWeight => _weight;
   int get getAge => _age;
@@ -28,6 +30,10 @@ class BmiProvider with ChangeNotifier {
     _bmiDesc = bmiRepo.bmiDesc(_bmiDesc, _bmiResult);
     _color = bmiRepo.bmiColor(_bmiResult);
     notifyListeners();
+  }
+
+  void genderSelected() {
+    _genderSelected = bmiRepo.setGenderSelected(_gender);
   }
 
   void incrementWeight() {

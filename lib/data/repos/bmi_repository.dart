@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
 class BmiRepository {
+  int setGenderSelected(int gender) {
+    return gender;
+  }
+
   int incrementWeight(int weight) {
     return ++weight;
   }
