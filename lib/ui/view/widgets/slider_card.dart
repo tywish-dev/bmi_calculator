@@ -39,9 +39,7 @@ class _SliderCardState extends State<SliderCard> {
               max: 230,
               label: bmiProvider.getHeight.round().toString(),
               onChanged: (double value) {
-                setState(() {
-                  bmiProvider.setHeight(value);
-                });
+                bmiProvider.setHeight(value);
               },
             ),
           ],
